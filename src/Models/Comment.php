@@ -162,7 +162,7 @@ class Comment extends Model
         $model = (new ($modelClass))->where('id', $modelId)
             ->select('id')
             ->firstOrFail();
-        $comment = $model->commentAs($commenter, $comment, $parent_id ?? null);
+        $comment = $model->commentAs($commenter, $comment, $parentId ?? null);
 
         return config('commentable.data.comment')::from($comment)->wrap('data');
     }
