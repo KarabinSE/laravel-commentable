@@ -36,7 +36,7 @@ class EmailMentioned implements ShouldBroadcast
     public function broadcastWith(): array
     {
         return [
-            'comment' => CommentData::from($this->comment),
+            'comment' => config('commentable.data.comment')::from($this->comment),
             'email' => $this->email,
         ];
     }
